@@ -37,7 +37,7 @@ const todoSchema = new mongoose.Schema({
   isInProgress: {
     type: Boolean,
     default: true,
-    reuired: false,
+    required: false,
   },
 });
 
