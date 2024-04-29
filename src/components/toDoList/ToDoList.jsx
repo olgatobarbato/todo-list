@@ -12,7 +12,7 @@ const ToDoList = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.list}>
       {toDoData.map((todo, index) => (
         <ToDoItem key={index} data={todo} />
       ))}

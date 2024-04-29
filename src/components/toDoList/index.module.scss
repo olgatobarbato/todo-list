@@ -1,0 +1,6 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.list {
+  @include display(flex, column, center, center, 20px, 0);
+}
