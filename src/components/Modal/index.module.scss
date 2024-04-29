@@ -12,7 +12,7 @@
   backdrop-filter: blur(10px);
   z-index: 10;
 
-  form {
+  .form {
     @include font("Montserrat", 500, 0.8rem, none, normal, 1px, inherit);
     background-color: $blue;
     color: white;
@@ -21,6 +21,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    width: 90%;
 
     input,
     select,
@@ -31,13 +32,19 @@
       border: none;
       outline-color: transparent;
     }
-
-    .datepicker {
-      @include display(flex, column, center, center, 10px, 0);
+    .datepickerWrapper {
+      @include display(flex, column, center, inherit, 10px, 0);
       width: 100%;
+
+      .datepicker {
+        width: 100%;
+      }
     }
     .buttonWrapper {
       grid-column: span 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       .button {
         @include font("Montserrat", 500, 0.8rem, none, uppercase, 1px, inherit);
@@ -49,13 +56,23 @@
         background-color: $aqua-marine;
         border: none;
         color: black;
-        width: 100%;
+        width: 60%;
 
         &:hover {
           background-color: $red;
           color: white;
         }
       }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .form {
+      width: 70%;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .form {
+      width: 40%;
     }
   }
 }
