@@ -49,6 +49,13 @@ const Modal = ({ onClose }) => {
           type="text"
           placeholder="Task title"
         />
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          {categories.map((cat, index) => (
+            <option value={cat} key={index}>
+              {cat}
+            </option>
+          ))}
+        </select>
         <textarea
           rows="4"
           value={content}
@@ -57,30 +64,30 @@ const Modal = ({ onClose }) => {
           type="text"
           placeholder="Your task"
         />
-        <DatePicker
-          className={styles.datepicker}
-          selected={date}
-          onChange={(date) => setDate(date)}
-        />
-        <DatePicker
-          className={styles.datepicker}
-          selected={time}
-          onChange={(time) => setTime(time)}
-          showTimeSelect
-          showTimeSelectOnly
-          timeIntervals={15}
-          timeCaption="Time"
-          dateFormat="h:mm a"
-        />
-
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          {categories.map((cat, index) => (
-            <option value={cat} key={index}>
-              {cat}
-            </option>
-          ))}
-        </select>
-        <input className={styles.button} type="submit" value="Save your task" />
+        <div className={styles.datepicker}>
+          <DatePicker
+            className={styles.datepicker}
+            selected={date}
+            onChange={(date) => setDate(date)}
+          />
+          <DatePicker
+            className={styles.datepicker}
+            selected={time}
+            onChange={(time) => setTime(time)}
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={15}
+            timeCaption="Time"
+            dateFormat="h:mm a"
+          />
+        </div>
+        <div className={styles.buttonWrapper}>
+          <input
+            className={styles.button}
+            type="submit"
+            value="Save your task"
+          />
+        </div>
       </form>
     </div>
   );
