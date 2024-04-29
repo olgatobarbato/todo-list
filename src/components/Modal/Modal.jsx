@@ -8,7 +8,7 @@ const Modal = ({ onClose }) => {
   const [content, setContent] = useState("");
   const [time, setTime] = useState(new Date());
   const [date, setDate] = useState(new Date());
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Work");
 
   const categories = ["Work", "Personal", "Home"];
 
@@ -83,11 +83,7 @@ const Modal = ({ onClose }) => {
           />
         </div>
         <div className={styles.buttonWrapper}>
-          <input
-            className={styles.button}
-            type="submit"
-            value="Save your task"
-          />
+          <input className={styles.button} type="submit" value="Save" />
         </div>
       </form>
     </div>
