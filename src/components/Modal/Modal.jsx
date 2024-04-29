@@ -42,7 +42,7 @@ const Modal = ({ onClose }) => {
 
   return (
     <div className={styles.wrapper}>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -64,11 +64,12 @@ const Modal = ({ onClose }) => {
           type="text"
           placeholder="Your task"
         />
-        <div className={styles.datepicker}>
+        <div className={styles.datepickerWrapper}>
           <DatePicker
             className={styles.datepicker}
             selected={date}
             onChange={(date) => setDate(date)}
+            dateFormat="dd / MM / yyyy"
           />
           <DatePicker
             className={styles.datepicker}
