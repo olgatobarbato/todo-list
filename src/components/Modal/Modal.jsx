@@ -1,8 +1,9 @@
 import styles from "./index.module.scss";
 import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const Modal = () => {
+const Modal = ({ onClose }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [time, setTime] = useState(new Date());
@@ -32,6 +33,8 @@ const Modal = () => {
       }
       const responseData = await response.json();
       console.log("Data response:", responseData);
+
+      onClose();
     } catch (error) {
       console.error("Error:", error);
     }
@@ -46,13 +49,21 @@ const Modal = () => {
           type="text"
           placeholder="Task title"
         />
-        <input
+        <textarea
+          rows="4"
           value={content}
+          className={styles.content}
           onChange={(e) => setContent(e.target.value)}
           type="text"
           placeholder="Your task"
         />
         <DatePicker
+          className={styles.datepicker}
+          selected={date}
+          onChange={(date) => setDate(date)}
+        />
+        <DatePicker
+          className={styles.datepicker}
           selected={time}
           onChange={(time) => setTime(time)}
           showTimeSelect
@@ -61,7 +72,7 @@ const Modal = () => {
           timeCaption="Time"
           dateFormat="h:mm a"
         />
-        <DatePicker selected={date} onChange={(date) => setDate(date)} />
+
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           {categories.map((cat, index) => (
             <option value={cat} key={index}>
@@ -69,7 +80,7 @@ const Modal = () => {
             </option>
           ))}
         </select>
-        <input type="submit" value="Save your task" />
+        <input className={styles.button} type="submit" value="Save your task" />
       </form>
     </div>
   );
