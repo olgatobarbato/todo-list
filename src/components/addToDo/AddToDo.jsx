@@ -1,7 +1,26 @@
 import styles from "./index.module.scss";
+import { useState } from "react";
+import Modal from "../modal";
 
 const AddToDo = () => {
-  return <button className={styles.button}>Add To Do</button>;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <div>
+      <button className={styles.button} onClick={openModal}>
+        Add your task
+      </button>
+      {isModalOpen && <Modal onClose={closeModal} />}
+    </div>
+  );
 };
 
 export default AddToDo;

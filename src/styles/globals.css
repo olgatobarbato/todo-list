@@ -30,12 +30,25 @@ ul {
   list-style-type: none;
 }
 
-.button {
+button {
   display: inline-block;
-  padding: 15px 25px;
+  font-size: 0.8rem;
+  line-height: auto;
+  border-radius: 5px;
+  padding: 6px 12px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #cc2936;
+  border: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #b5ffe1;
+  color: black;
 }
 
 h1 {
