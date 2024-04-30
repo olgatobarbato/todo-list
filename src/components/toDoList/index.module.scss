@@ -4,4 +4,5 @@
 .list {
   @include display(flex, column, center, center, 20px, 0);
   padding-bottom: 50px;
+  width: 350px;
 }
