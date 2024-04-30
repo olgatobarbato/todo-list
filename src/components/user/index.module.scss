@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.wrapper {
+  @include display(flex, row, space-between, center, 20px, 0);
+  @include font("Montserrat", 500, 0.8rem, none, normal, 1px, inherit);
+
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 390px;
+
+  .label {
+    @include display(flex, column, space-between, fle-start, 20px, 0);
+  }
+  .image {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 100%;
+    margin: 0;
+    height: auto;
+  }
+  h3 {
+    margin: 0;
+  }
+}

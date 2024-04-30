@@ -16,7 +16,7 @@ const AddToDo = () => {
   return (
     <div>
       <button className={styles.button} onClick={openModal}>
-        Add your task
+        + Add new task
       </button>
       {isModalOpen && <Modal onClose={closeModal} />}
     </div>

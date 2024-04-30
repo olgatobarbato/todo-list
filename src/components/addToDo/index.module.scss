@@ -1,2 +1,12 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
+
+.button {
+  position: fixed; // Mantiene il pulsante fisso
+  bottom: 20px; // Posizionamento dal basso
+  left: 50%; // Allinea al centro orizzontalmente
+  transform: translateX(-50%);
+  width: 315px;
+  height: 40px;
+  border-radius: 10px;
+}

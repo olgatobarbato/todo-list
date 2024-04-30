@@ -2,10 +2,37 @@
 @import "../../styles/mixins.scss";
 
 .wrapper {
-  @include display(flex, column, center, center, 0, 0);
-  border: 1px solid black;
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
+  @include display(flex, column, center, center, 5px, 0);
+  position: relative;
+  border: 1px solid rgb(171, 170, 170);
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   padding: 10px;
   width: 100%;
+
+  .button {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background-color: $light-coral;
+
+    &:hover {
+      background-color: $aqua-marine;
+    }
+  }
+
+  .date {
+    border: none;
+    background-color: #f3f1f5;
+    padding: 7px;
+    border-radius: 7px;
+  }
+
+  .categorySquare {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border-radius: 2px;
+  }
 }
