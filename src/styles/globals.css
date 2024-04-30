@@ -15,6 +15,7 @@ body {
   margin: 0 auto;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
+  color: #1c1f27;
 }
 
 img {
@@ -41,13 +42,13 @@ button {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-color: #cc2936;
+  background-color: #a0c4fc;
   border: none;
   color: white;
 }
 
 button:hover {
-  background-color: #b5ffe1;
+  background-color: #ef767a;
   color: black;
 }
 

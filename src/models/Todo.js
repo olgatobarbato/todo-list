@@ -4,7 +4,7 @@ const todoSchema = new mongoose.Schema({
   username: {
     type: String,
     required: false,
-    default: "Username not provided",
+    default: "Olga",
   },
   avatar: {
     type: String,
