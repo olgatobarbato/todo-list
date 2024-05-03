@@ -1,10 +1,20 @@
+import { useState } from "react";
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
+import Calendar from "@/components/calendar";
+import Details from "./Details";
 import ToDoList from "@/components/toDoList";
 import AddToDo from "@/components/addToDo";
 import User from "@/components/user";
 
 export default function Home() {
+  const [showDetails, setShowDetails] = useState(false);
+  const [data, setData] = useState(null);
+
+  const showDetailsHandle = (dayStr) => {
+    setData(dayStr);
+    setShowDetails(true);
+  };
   return (
     <>
       <Head>
@@ -15,7 +25,10 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <User />
-        <ToDoList />
+        <Calendar showDetailsHandle={showDetailsHandle} />
+        <br />
+        {showDetails && <Details data={data} />}
+        <ToDoList data={data} />
         <AddToDo />
       </main>
     </>

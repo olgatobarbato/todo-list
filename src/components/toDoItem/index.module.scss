@@ -5,7 +5,7 @@
   @include display(flex, column, center, center, 5px, 0);
   position: relative;
   border: 1px solid rgb(171, 170, 170);
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: $box-shadow;
   border-radius: 10px;
   padding: 10px;
   width: 100%;
@@ -15,9 +15,24 @@
     right: 8px;
     top: 8px;
     background-color: $light-coral;
+    width: 30px;
+    height: 30px;
 
     &:hover {
       background-color: $aqua-marine;
+    }
+  }
+  .completeCheckbox {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+
+    input[type="checkbox"]:checked + & {
+      background: $button;
+      border-color: $button;
     }
   }
 
@@ -34,5 +49,9 @@
     height: 12px;
     margin-right: 8px;
     border-radius: 2px;
+  }
+
+  .editTask {
+    width: 180px;
   }
 }
